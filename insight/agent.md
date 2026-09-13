@@ -24,3 +24,6 @@ elif signals.confidence < τ_mid and budget.left() > 0:
     log.write(...)
 
 自动生成规则 RuleGen 是必要的。
+
+GLM 适合发散，DeepSeek 适合对齐，Kimi 适合收敛。
+
