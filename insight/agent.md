@@ -23,3 +23,4 @@ elif signals.confidence < τ_mid and budget.left() > 0:
     out = l1.review(task, out, signals)
     log.write(...)
 
+自动生成规则 RuleGen 是必要的。
