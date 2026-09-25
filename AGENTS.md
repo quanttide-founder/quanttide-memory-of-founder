@@ -1,27 +1,33 @@
 # AGENTS.md
 
-## Skill 索引
+量潮创始人第二大脑的记忆仓库：日志时间线、个人档案、方向决策。
+
+## 目录与边界
+
+| 层级 | 目录 | 内容特征 | 示例 |
+|------|------|---------|------|
+| 时间线 | `journal/` | 原始日志，按日期记录 | 新增/修改日志 |
+| 特征 | `profile/` | 跨日期蒸馏的稳定特征 | 情绪、价值观、触发点、方法论、表达 |
+| 方向 | `roadmap/` | 愿景、选择、待定方向 | 目标、已决策、待决策、核心问题、元目标 |
+
+**边界规则**：
+- 单次事件与业务状态不进 `profile/`，也不进 `roadmap/`——它们只存在于 `journal/` 时间线中。
+- 决策（无论已/待）与元目标归 `roadmap/`；跨时间稳定的个人特征归 `profile/`。
+- `profile/` 只描述特征，不给建议；建议是对话输出，不是档案内容。
+
+## 工作流
+
+### 触发规则
+
+- **日志更新后蒸馏档案**：`journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新 `profile/` 下的档案（emotions / values / triggers / methods / expressions），无需用户再次指示。
+
+### Skill 索引
 
 | Skill | 用途 | 路径 |
 |-------|------|------|
 | `journal-to-profile` | 从日志蒸馏个人档案 | `.agents/skills/journal-to-profile/SKILL.md` |
 
-## 快速索引
-
-| 任务 | 操作位置 |
-|------|---------|
-| 资产分类 | Skill: `asset-classify` |
-| 日志蒸馏档案 | Skill: `journal-to-profile` |
-
----
-
-## 触发规则
-
-- **日志更新后蒸馏档案**：`journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新 `profile/` 下的档案（emotions / values / triggers / methods / expressions），无需用户再次指示。
-
----
-
-## 我的工作原则
+## 工作原则
 
 ### 最小干预
 - 仅在用户明确请求时操作
@@ -57,18 +63,7 @@
 | `refactor` | 重构 |
 | `chore` | 构建/工具 |
 
-## 文档结构划分
-
-`roadmap/`（方向层）和 `report/`（事实层）按以下边界分离：
-
-| 层级 | 目录 | 内容特征 | 示例 |
-|------|------|---------|------|
-| 方向 | `roadmap/` | 愿景、选择、待定方向 | 目标、已决策、待决策、核心问题、元目标 |
-| 事实 | `report/` | 状态、完成度、差距 | 已实现、设计已明确但未实现、差距 |
-
-**边界规则**：决策（无论已/待）归 roadmap，实现状态归 report，元目标归 roadmap。
-
-## 如何维护
+## Skill 维护
 
 | 类型 | 写在哪里 |
 |------|---------|
@@ -103,8 +98,8 @@ description: 功能描述。
 操作步骤
 ```
 
-`name` 必须与目录名一致。新建后在本文件的 Skill 索引与快速索引中登记。
+`name` 必须与目录名一致。新建后在本文件的 Skill 索引中登记；若有自动触发场景，同步在工作流的触发规则中挂载。
 
 ### 修改 / 删除 Skill
 
-直接编辑 `.agents/skills/<name>/SKILL.md`；删除用 `rm -rf .agents/skills/<name>`，同时清理本文件中的索引条目。
+直接编辑 `.agents/skills/<name>/SKILL.md`；删除用 `rm -rf .agents/skills/<name>`，同时清理本文件中的索引与触发规则条目。
