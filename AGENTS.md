@@ -20,12 +20,14 @@
 ### 触发规则
 
 - **日志更新后蒸馏档案**：`journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新 `profile/` 下的档案（emotions / values / triggers / methods / expressions），无需用户再次指示。
+- **日志更新后更新路线图**：同一时机，读取 `.agents/skills/journal-to-roadmap/SKILL.md` 并按其流程更新 `roadmap/` 下的主题路线图，无需用户再次指示。
 
 ### Skill 索引
 
 | Skill | 用途 | 路径 |
 |-------|------|------|
 | `journal-to-profile` | 从日志蒸馏个人档案 | `.agents/skills/journal-to-profile/SKILL.md` |
+| `journal-to-roadmap` | 从日志蒸馏方向层路线图 | `.agents/skills/journal-to-roadmap/SKILL.md` |
 
 ## 工作原则
 

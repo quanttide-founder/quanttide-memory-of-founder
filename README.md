@@ -14,7 +14,7 @@ assets/memory/
 │   ├── triggers.md    # 触发点
 │   ├── methods.md     # 方法论（思维框架与应对策略）
 │   └── expressions.md # 表达（叙事指纹）
-├── roadmap/           # 方向层：愿景、决策、核心问题
+├── roadmap/           # 主题路线图（方向层：目标、已/待决策、核心问题、元目标）
 ├── .agents/skills/    # Agent Skill
 ├── AGENTS.md          # Agent 工作指南
 └── CHANGELOG.md       # 变更日志
@@ -23,10 +23,14 @@ assets/memory/
 ## 数据流
 
 ```text
-journal/（日志）→ journal-to-profile skill → profile/（档案）
+journal/（日志）→ journal-to-profile  → profile/（个人档案）
+               → journal-to-roadmap   → roadmap/（主题路线图）
 ```
 
-日志新增或修改后，按 `.agents/skills/journal-to-profile/SKILL.md` 蒸馏进五轴档案，无需人工指示。蒸馏只收跨时间稳定的特征：决策归 `roadmap/`，业务状态与待定决策不进档案。
+日志新增或修改后，两条蒸馏按各自 skill 自动执行，无需人工指示：
+
+- 档案只收跨时间稳定的个人特征；决策、单次事件不进档案。
+- 路线图只收方向层内容（目标、已/待决策、核心问题、元目标），按证据分级，以最新状态为准。
 
 ## 文档边界
 
