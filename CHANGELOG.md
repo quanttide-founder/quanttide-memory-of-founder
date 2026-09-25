@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.0] - 2026-09-26
+
+个人档案与双蒸馏管线：日志经显式提炼层蒸馏为个人档案（特征）与主题路线图（方向），两条蒸馏均由 skill 规范并挂载自动触发。
+
+### Added
+
+- `profile/`：五轴个人档案（emotions 情绪 / values 价值观 / triggers 触发点 / methods 方法论 / expressions 表达）
+- `roadmap/`：主题路线图首批（business / platform / creative），章节序为目标（含元目标）→ 核心问题 → 已/待决策
+- `.agents/skills/journal-to-profile/`：日志蒸馏个人档案 skill
+- `.agents/skills/journal-to-roadmap/`：日志蒸馏方向路线图 skill
+- AGENTS.md 触发规则：日志更新后自动执行双蒸馏
+- `journal/`：2026-08-10 ~ 2026-09-25 日报
+
+### Changed
+
+- AGENTS.md：重组为目录边界 → 工作流 → 行为约束结构，Skill 索引与触发规则统一挂载
+- README.md：重写，补充目录结构与双分支数据流
+
+### Removed
+
+- `roadmap/qtfounder.md`：迁移至 `apps/qtfounder/ROADMAP.md`（平台路线图归所属应用仓库）
+- `journal/default/` 2026-07-29 ~ 2026-09-19 共 53 篇归档至 `assets/archive/journal/default/`
+- `insight/`、`context/` 笔记迁出（分别至 quanttide-tech 与 laboratory docs）
+- `intention/`、`report/` 过时文件，`handbook/` 部分文档移出，voice-input 与战棋推演文档清理
+
 ## [1.0.0] - 2026-08-10
 
 首个正式发布（1.0.0）：report 与 roadmap 目录结构扁平化后趋于稳定，后续遵循语义化版本规范，破坏性变更将单独声明。
