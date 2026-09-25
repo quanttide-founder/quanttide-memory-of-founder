@@ -1,12 +1,6 @@
 # AGENTS.md
 
-## 相关文档
-
-| 文档 | 用途 |
-|------|------|
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Skill 使用和维护指南 |
-
-### Skill 索引
+## Skill 索引
 
 | Skill | 用途 | 路径 |
 |-------|------|------|
@@ -80,3 +74,37 @@
 |------|---------|
 | 详细说明、工作流步骤 | `.agents/skills/` 中的 Skill 文件 |
 | 给链接、导航索引 | AGENTS.md |
+
+### 新建 Skill
+
+```bash
+mkdir -p .agents/skills/<name>
+# 创建 .agents/skills/<name>/SKILL.md
+```
+
+SKILL.md 模板：
+
+```markdown
+---
+name: <name>
+description: 功能描述。
+---
+
+# <name>
+
+## 规则
+
+- 必须遵守的约束
+
+## 工作流
+
+### 步骤名称
+
+操作步骤
+```
+
+`name` 必须与目录名一致。新建后在本文件的 Skill 索引与快速索引中登记。
+
+### 修改 / 删除 Skill
+
+直接编辑 `.agents/skills/<name>/SKILL.md`；删除用 `rm -rf .agents/skills/<name>`，同时清理本文件中的索引条目。
