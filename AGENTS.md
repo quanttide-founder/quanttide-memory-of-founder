@@ -10,20 +10,20 @@
 
 | Skill | 用途 | 路径 |
 |-------|------|------|
-| `emotion` | 从日志提炼情绪档案 | `.agents/skills/emotion/SKILL.md` |
+| `journal-to-profile` | 从日志蒸馏个人档案 | `.agents/skills/journal-to-profile/SKILL.md` |
 
 ## 快速索引
 
 | 任务 | 操作位置 |
 |------|---------|
 | 资产分类 | Skill: `asset-classify` |
-| 日志情绪提炼 | Skill: `emotion` |
+| 日志蒸馏档案 | Skill: `journal-to-profile` |
 
 ---
 
 ## 触发规则
 
-- **日志更新后提炼情绪**：`journal/` 中新增或修改日志后，读取 `.agents/skills/emotion/SKILL.md` 并按其流程更新 `profile/emotions.md`，无需用户再次指示。
+- **日志更新后蒸馏档案**：`journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新 `profile/` 下的档案（emotions / values / triggers / methods / expressions），无需用户再次指示。
 
 ---
 
