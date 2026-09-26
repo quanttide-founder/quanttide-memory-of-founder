@@ -10,8 +10,8 @@
 
 | 旧路径 | 新路径 |
 |--------|--------|
-| `journal/YYYY-MM-DD.md` | `default/journal/YYYY-MM-DD.md` |
-| `journal/default/YYYY-MM-DD.md` | `default/journal/YYYY-MM-DD.md` |
+| `journal/YYYY-MM-DD.md` | `default/YYYY-MM-DD.md`（集根，当天） |
+| `journal/default/YYYY-MM-DD.md` | `default/journal/YYYY-MM-DD.md`（历史） |
 | `profile/{emotions,values,triggers,methods,expressions}.md` | `default/profile/` 同名 |
 | `insight/{business,platform,ai,creative}.md` | `default/insight/` 同名 |
 | `roadmap/{business,platform,creative}.md` | `default/roadmap/` 同名 |
@@ -27,7 +27,8 @@ AGENTS.md、README.md 与 `journal-to-*` 三个 skill 已同步改为 `<集>/` �
 ### Changed
 
 - 顶层结构：根级 `journal/ profile/ insight/ roadmap/` 下沉为 `default/` 记忆集
-- `journal/`：取消按来源的 `default/` 中间层，日期文件直接平铺于 `<集>/journal/`
+- `journal/`：取消按来源的 `default/` 中间层；当天日志置于集根，历史日志平铺于 `<集>/journal/`
+- AGENTS.md 新增「日志落位」规则：当天日志放集根便于手机端直接写入，更早日志归 `<集>/journal/`
 - AGENTS.md、README.md：目录边界、数据流与触发规则改为 `<集>/` 前缀，触发规则明确蒸馏限同一记忆集内
 - `.agents/skills/journal-to-{profile,roadmap,insight}/SKILL.md`：扫描范围改为本集全部日志且不读其他集，输出路径改为 `<集>/` 前缀，按集举例
 - `.agents/skills/journal-to-profile/SKILL.md`：参照口吻的路径由 `../fiction/草稿箱/2_情绪日记/` 修正为 `../fiction/观察站/1_情绪日记/`
