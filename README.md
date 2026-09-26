@@ -4,29 +4,39 @@
 
 ## 目录
 
+记忆按主题域分为两个记忆集，每个集内是同一套四层结构：
+
 ```text
 assets/memory/
-├── journal/           # 日志时间线（原始记录）
-│   └── default/       # 默认日志，按日期分文件
-├── profile/           # 个人档案（从日志跨日期蒸馏）
-│   ├── emotions.md    # 情绪
-│   ├── values.md      # 价值观
-│   ├── triggers.md    # 触发点
-│   ├── methods.md     # 方法论（思维框架与应对策略）
-│   └── expressions.md # 表达（叙事指纹）
-├── insight/           # 认知洞察（从日志提炼的机制与规律，按证据分级）
-├── roadmap/           # 主题路线图（方向层：目标含元目标 → 核心问题 → 已/待决策）
-├── .agents/skills/    # Agent Skill
-├── AGENTS.md          # Agent 工作指南
-└── CHANGELOG.md       # 变更日志
+├── default/            # 创业与个人主线记忆集
+│   ├── journal/        # 日志时间线（原始记录，按日期平铺）
+│   ├── profile/        # 个人档案（从日志跨日期蒸馏）
+│   │   ├── emotions.md    # 情绪
+│   │   ├── values.md      # 价值观
+│   │   ├── triggers.md    # 触发点
+│   │   ├── methods.md     # 方法论（思维框架与应对策略）
+│   │   └── expressions.md # 表达（叙事指纹）
+│   ├── insight/        # 认知洞察（机制与规律，按证据分级）
+│   └── roadmap/        # 主题路线图（目标含元目标 → 核心问题 → 已/待决策）
+├── write/              # 写作主线记忆集（原 assets/fiction/创作谈/）
+│   ├── journal/        # 创作日志
+│   ├── profile/        # 创作档案（创作动机 / 创作方法 / 创作困境）
+│   ├── insight/        # 创作认知洞察
+│   ├── roadmap/        # 作品路线图（三部曲世界观 / 职场言情 / 重生言情）
+│   └── README.md
+├── .agents/skills/     # Agent Skill
+├── AGENTS.md           # Agent 工作指南
+└── CHANGELOG.md        # 变更日志
 ```
 
 ## 数据流
 
+蒸馏在同一记忆集内闭环，不跨集搬运：
+
 ```text
-journal/（日志）→ journal-to-profile  → profile/（个人档案）
-               → journal-to-roadmap   → roadmap/（主题路线图）
-               → journal-to-insight   → insight/（认知洞察）
+<集>/journal/（日志）→ journal-to-profile  → <集>/profile/（个人档案）
+                    → journal-to-roadmap   → <集>/roadmap/（主题路线图）
+                    → journal-to-insight   → <集>/insight/（认知洞察）
 ```
 
 日志新增或修改后，三条蒸馏按各自 skill 自动执行，无需人工指示：
@@ -39,10 +49,10 @@ journal/（日志）→ journal-to-profile  → profile/（个人档案）
 
 | 层级 | 目录 | 内容 |
 |------|------|------|
-| 时间线 | `journal/` | 原始日志，按日期记录 |
-| 特征 | `profile/` | 蒸馏后的个人档案，跨日期稳定 |
-| 认知 | `insight/` | 想通的机制与规律命题，已确认/假说分级 |
-| 方向 | `roadmap/` | 目标（含元目标）、核心问题、已/待决策 |
+| 时间线 | `<集>/journal/` | 原始日志，按日期记录 |
+| 特征 | `<集>/profile/` | 蒸馏后的个人档案，跨日期稳定 |
+| 认知 | `<集>/insight/` | 想通的机制与规律命题，已确认/假说分级 |
+| 方向 | `<集>/roadmap/` | 目标（含元目标）、核心问题、已/待决策 |
 
 ## 相关文档
 

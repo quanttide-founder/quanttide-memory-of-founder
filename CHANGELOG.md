@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.2.0] - 2026-09-26
+
+**定位说明**：记忆仓库由「单记忆集四层平铺」改为「多记忆集」架构。顶层按主题域划分为记忆集，每个记忆集内保持 `journal/ profile/ insight/ roadmap/` 同构四层；蒸馏在同一集内闭环，不跨集搬运。同时从 `assets/fiction` 收编创作记忆，建立 `write/` 记忆集。
+
+### 破坏性变更与迁移指南
+
+所有原有路径整体下沉一层，原根级四层目录即 `default/` 记忆集；原 `journal/default/` 中间层被摊平进 `default/journal/`。按旧路径读取或写入会落空，需按下表迁移：
+
+| 旧路径 | 新路径 |
+|--------|--------|
+| `journal/YYYY-MM-DD.md` | `default/journal/YYYY-MM-DD.md` |
+| `journal/default/YYYY-MM-DD.md` | `default/journal/YYYY-MM-DD.md` |
+| `profile/{emotions,values,triggers,methods,expressions}.md` | `default/profile/` 同名 |
+| `insight/{business,platform,ai,creative}.md` | `default/insight/` 同名 |
+| `roadmap/{business,platform,creative}.md` | `default/roadmap/` 同名 |
+| `assets/fiction/创作谈/**` | `write/**`（跨子模块） |
+
+AGENTS.md、README.md 与 `journal-to-*` 三个 skill 已同步改为 `<集>/` 前缀写法，并新增分集规则：写入前判定主题域，两集都像时归 `default/`；蒸馏不跨集。
+
+### Added
+
+- `write/`：写作记忆集，收录创作日志（2026-09-05 ~ 2026-09-25）、创作档案（创作动机 / 创作方法 / 创作困境）、创作认知洞察与作品路线图（三部曲世界观 / 职场言情 / 重生言情），迁自 `assets/fiction/创作谈/`
+- AGENTS.md「记忆集」节：分集表、分集规则与四层同构约定
+
+### Changed
+
+- 顶层结构：根级 `journal/ profile/ insight/ roadmap/` 下沉为 `default/` 记忆集
+- `journal/`：取消按来源的 `default/` 中间层，日期文件直接平铺于 `<集>/journal/`
+- AGENTS.md、README.md：目录边界、数据流与触发规则改为 `<集>/` 前缀，触发规则明确蒸馏限同一记忆集内
+- `.agents/skills/journal-to-{profile,roadmap,insight}/SKILL.md`：扫描范围改为本集全部日志且不读其他集，输出路径改为 `<集>/` 前缀，按集举例
+- `.agents/skills/journal-to-profile/SKILL.md`：参照口吻的路径由 `../fiction/草稿箱/2_情绪日记/` 修正为 `../fiction/观察站/1_情绪日记/`
+
+### Removed
+
+- 根级 `journal/`、`profile/`、`insight/`、`roadmap/` 目录（迁入 `default/`，路径见上表）
+- `journal/default/` 中间层（摊平进 `default/journal/`）
+
 ## [1.1.1] - 2026-09-26
 
 认知洞察层：新增 journal-to-insight skill，日志经第三条蒸馏管线产出 `insight/` 认知洞察（已确认/假说分级），时间线 → 特征/认知/方向的分层成形。
