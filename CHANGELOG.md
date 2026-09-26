@@ -13,6 +13,7 @@
 ### Changed
 
 - AGENTS.md、README.md：目录边界与数据流补充认知层，Skill 索引登记 journal-to-insight
+- `roadmap/creative.md`：新增待决策「memory→fiction 链路打通」（来自 09-26 日志蒸馏）
 - `profile/expressions.md`：「从记忆到小说」机制命题移入 `insight/creative.md`，原处改留导引
 
 ## [1.1.0] - 2026-09-26
