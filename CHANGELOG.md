@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2] - 2026-09-26
+
+### Added
+
+- `.agents/skills/journal-to-intention/SKILL.md`「自查」节：忠实度、约束完整、张力标注、跨层去重、格式与分类、覆盖度六项标准，附反例
+
+### Fixed
+
+- `default/intention/business.md`：发布分流移除与 roadmap 重复的「交给团队」；规模化培养补回「不等单个人成长」约束并标注与「带人须有收益」的解耦条件
+- `default/intention/ai.md`：提问先行降格为「鼓励提问」；上下文条目明确「事实与约束给全」，修剪条目标注「去噪而非删事实」
+- `default/intention/creative.md`：与 `insight/creative.md` 同源条目改为互链，保留指令形式
+
 ## [1.2.1] - 2026-09-26
 
 ### Added
