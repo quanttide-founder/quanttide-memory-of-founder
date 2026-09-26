@@ -5,7 +5,7 @@
 ### Added
 
 - `.agents/skills/journal-to-intention/`：从日志提取人类意图写入 `<集>/intention/`，收录 AI 提问时人类的回答与交互摩擦处的主动澄清，用于对齐人机协作信息
-- `default/intention/`：`default/` 记忆集的对齐层，首发 `ai.md` 六条人机协作意图（`write/` 集暂不启用）
+- `default/intention/`：`default/` 记忆集的对齐层，首发 `ai.md` 七条人机协作意图（`write/` 集暂不启用）
 - AGENTS.md、README.md：目录边界、边界规则、数据流与触发规则登记 `intention/` 层及 `journal-to-intention` skill
 
 ## [1.2.0] - 2026-09-26
