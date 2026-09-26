@@ -14,6 +14,7 @@ assets/memory/
 │   ├── triggers.md    # 触发点
 │   ├── methods.md     # 方法论（思维框架与应对策略）
 │   └── expressions.md # 表达（叙事指纹）
+├── insight/           # 认知洞察（从日志提炼的机制与规律，按证据分级）
 ├── roadmap/           # 主题路线图（方向层：目标含元目标 → 核心问题 → 已/待决策）
 ├── .agents/skills/    # Agent Skill
 ├── AGENTS.md          # Agent 工作指南
@@ -25,12 +26,14 @@ assets/memory/
 ```text
 journal/（日志）→ journal-to-profile  → profile/（个人档案）
                → journal-to-roadmap   → roadmap/（主题路线图）
+               → journal-to-insight   → insight/（认知洞察）
 ```
 
-日志新增或修改后，两条蒸馏按各自 skill 自动执行，无需人工指示：
+日志新增或修改后，三条蒸馏按各自 skill 自动执行，无需人工指示：
 
 - 档案只收跨时间稳定的个人特征；决策、单次事件不进档案。
 - 路线图只收方向层内容，按证据分级，以最新状态为准：目标（含元目标）→ 核心问题 → 已/待决策。
+- 洞察只收可对错判断的命题（机制、规律、临界点），按证据分已确认/假说；感受、选择、事件不进洞察。
 
 ## 文档边界
 
@@ -38,6 +41,7 @@ journal/（日志）→ journal-to-profile  → profile/（个人档案）
 |------|------|------|
 | 时间线 | `journal/` | 原始日志，按日期记录 |
 | 特征 | `profile/` | 蒸馏后的个人档案，跨日期稳定 |
+| 认知 | `insight/` | 想通的机制与规律命题，已确认/假说分级 |
 | 方向 | `roadmap/` | 目标（含元目标）、核心问题、已/待决策 |
 
 ## 相关文档

@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.1] - 2026-09-26
+
+认知洞察层：新增 journal-to-insight skill，日志经第三条蒸馏管线产出 `insight/` 认知洞察（已确认/假说分级），时间线 → 特征/认知/方向的分层成形。
+
+### Added
+
+- `insight/`：认知洞察首批（business / platform / ai / creative），8 条命题按已确认/假说分级
+- `.agents/skills/journal-to-insight/`：日志提炼认知洞察 skill（三问过滤 + 命题判据 + 证据分级 + 跨层晋升规则）
+- AGENTS.md 触发规则：日志更新后自动执行三蒸馏（档案 / 路线图 / 洞察）
+
+### Changed
+
+- AGENTS.md、README.md：目录边界与数据流补充认知层，Skill 索引登记 journal-to-insight
+- `profile/expressions.md`：「从记忆到小说」机制命题移入 `insight/creative.md`，原处改留导引
+
 ## [1.1.0] - 2026-09-26
 
 个人档案与双蒸馏管线：日志经显式提炼层蒸馏为个人档案（特征）与主题路线图（方向），两条蒸馏均由 skill 规范并挂载自动触发。

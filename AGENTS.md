@@ -8,10 +8,12 @@
 |------|------|---------|------|
 | 时间线 | `journal/` | 原始日志，按日期记录 | 新增/修改日志 |
 | 特征 | `profile/` | 跨日期蒸馏的稳定特征 | 情绪、价值观、触发点、方法论、表达 |
+| 认知 | `insight/` | 想通的机制与规律命题，按证据分级 | 已确认、假说 |
 | 方向 | `roadmap/` | 愿景、选择、待定方向 | 目标（含元目标）、核心问题、已决策、待决策 |
 
 **边界规则**：
-- 单次事件与业务状态不进 `profile/`，也不进 `roadmap/`——它们只存在于 `journal/` 时间线中。
+- 单次事件与业务状态不进 `profile/`，也不进 `insight/` 与 `roadmap/`——它们只存在于 `journal/` 时间线中。
+- 认识三分：想通的命题归 `insight/`；命题反复套用成思维框架后归 `profile/methods.md`；命题引出的选择归 `roadmap/`。同一认识只在一处完整展开，跨层只留互链。
 - 决策（无论已/待）归 `roadmap/`；元目标是目标的子层，随目标归 `roadmap/`；跨时间稳定的个人特征归 `profile/`。
 - `profile/` 只描述特征，不给建议；建议是对话输出，不是档案内容。
 
@@ -21,6 +23,7 @@
 
 - **日志更新后蒸馏档案**：`journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新 `profile/` 下的档案（emotions / values / triggers / methods / expressions），无需用户再次指示。
 - **日志更新后更新路线图**：同一时机，读取 `.agents/skills/journal-to-roadmap/SKILL.md` 并按其流程更新 `roadmap/` 下的主题路线图，无需用户再次指示。
+- **日志更新后提炼洞察**：同一时机，读取 `.agents/skills/journal-to-insight/SKILL.md` 并按其流程更新 `insight/` 下的认知洞察，无需用户再次指示。
 
 ### Skill 索引
 
@@ -28,6 +31,7 @@
 |-------|------|------|
 | `journal-to-profile` | 从日志蒸馏个人档案 | `.agents/skills/journal-to-profile/SKILL.md` |
 | `journal-to-roadmap` | 从日志蒸馏方向层路线图 | `.agents/skills/journal-to-roadmap/SKILL.md` |
+| `journal-to-insight` | 从日志提炼认知洞察 | `.agents/skills/journal-to-insight/SKILL.md` |
 
 ## 工作原则
 
