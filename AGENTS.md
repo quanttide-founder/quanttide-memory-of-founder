@@ -4,7 +4,7 @@
 
 ## 记忆集
 
-记忆按主题域分集存放。每个记忆集是一套独立的四层结构，`journal/ profile/ insight/ roadmap/` 四个目录名在各集内保持一致，层内文件由各集按自身主题定义。
+记忆按主题域分集存放。每个记忆集是一套独立的四层结构，`journal/ profile/ insight/ roadmap/` 四个目录名在各集内保持一致，层内文件由各集按自身主题定义。`default/` 另设对齐层 `intention/`，收人机协作的意图澄清（`write/` 集暂不启用）。
 
 | 记忆集 | 主题域 | 说明 |
 |--------|--------|------|
@@ -25,9 +25,11 @@
 | 特征 | `<集>/profile/` | 跨日期蒸馏的稳定特征 | 情绪、价值观、触发点、方法论、表达 |
 | 认知 | `<集>/insight/` | 想通的机制与规律命题，按证据分级 | 已确认、假说 |
 | 方向 | `<集>/roadmap/` | 愿景、选择、待定方向 | 目标（含元目标）、核心问题、已决策、待决策 |
+| 对齐 | `<集>/intention/` | 人机协作的意图对齐信息（目前仅 `default/`） | AI 提问时的澄清、交互摩擦处的澄清 |
 
 **边界规则**：
 - 单次事件与业务状态不进 `<集>/profile/`，也不进 `<集>/insight/` 与 `<集>/roadmap/`——它们只存在于 `<集>/journal/` 时间线中。
+- 人机协作中「要 X，不要 Y」的意图澄清归 `<集>/intention/`；沉淀为稳定判断后归 `<集>/profile/`，成形为决策后归 `<集>/roadmap/`，同一内容只在一处完整展开。
 - 认识三分：想通的命题归 `<集>/insight/`；命题反复套用成思维框架后归 `<集>/profile/` 中的方法论文件；命题引出的选择归 `<集>/roadmap/`。同一认识只在一处完整展开，跨层只留互链。
 - 决策（无论已/待）归 `<集>/roadmap/`；元目标是目标的子层，随目标归 `<集>/roadmap/`；跨时间稳定的个人特征归 `<集>/profile/`。
 - `<集>/profile/` 只描述特征，不给建议；建议是对话输出，不是档案内容。
@@ -40,6 +42,7 @@
 - **日志更新后蒸馏档案**：`<集>/journal/` 中新增或修改日志后，读取 `.agents/skills/journal-to-profile/SKILL.md` 并按其流程更新**同一集** `<集>/profile/` 下的档案，无需用户再次指示。
 - **日志更新后更新路线图**：同一时机，读取 `.agents/skills/journal-to-roadmap/SKILL.md` 并按其流程更新同一集 `<集>/roadmap/` 下的主题路线图，无需用户再次指示。
 - **日志更新后提炼洞察**：同一时机，读取 `.agents/skills/journal-to-insight/SKILL.md` 并按其流程更新同一集 `<集>/insight/` 下的认知洞察，无需用户再次指示。
+- **日志更新后补充意图对齐**：同一时机，读取 `.agents/skills/journal-to-intention/SKILL.md` 并按其流程更新同一集 `<集>/intention/` 下的意图记录（当前仅 `default/` 设该目录），无需用户再次指示。
 
 ### Skill 索引
 
@@ -48,6 +51,7 @@
 | `journal-to-profile` | 从日志蒸馏个人档案 | `.agents/skills/journal-to-profile/SKILL.md` |
 | `journal-to-roadmap` | 从日志蒸馏方向层路线图 | `.agents/skills/journal-to-roadmap/SKILL.md` |
 | `journal-to-insight` | 从日志提炼认知洞察 | `.agents/skills/journal-to-insight/SKILL.md` |
+| `journal-to-intention` | 从日志提取人机协作意图 | `.agents/skills/journal-to-intention/SKILL.md` |
 
 ## 工作原则
 

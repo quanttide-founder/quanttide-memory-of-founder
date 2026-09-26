@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1] - 2026-09-26
+
+### Added
+
+- `.agents/skills/journal-to-intention/`：从日志提取人类意图写入 `<集>/intention/`，收录 AI 提问时人类的回答与交互摩擦处的主动澄清，用于对齐人机协作信息
+- `default/intention/`：`default/` 记忆集的对齐层，首发 `ai.md` 七条人机协作意图（`write/` 集暂不启用）
+- AGENTS.md、README.md：目录边界、边界规则、数据流与触发规则登记 `intention/` 层及 `journal-to-intention` skill
+
 ## [1.2.0] - 2026-09-26
 
 **定位说明**：记忆仓库由「单记忆集四层平铺」改为「多记忆集」架构。顶层按主题域划分为记忆集，每个记忆集内保持 `journal/ profile/ insight/ roadmap/` 同构四层；蒸馏在同一集内闭环，不跨集搬运。同时从 `assets/fiction` 收编创作记忆，建立 `write/` 记忆集。
