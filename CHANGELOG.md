@@ -21,6 +21,7 @@
 - `game/`：游戏主线记忆集，journal 层起步
 - `default/report/`：报告层（专题输出与实现状态沉淀），首个文件 `vibe-coding-methods.md`
 - `default/`：2026-09-27 当天日志；2026-09-26 归档入 `default/journal/`
+- `default/intention/platform.md`：新增归档站治理意图一条（过滤无价值 AI 信息、保留人类产出）
 
 ### Changed
 
