@@ -4,12 +4,12 @@
 
 ## 目录
 
-记忆按主题域分为两个记忆集，每个集内是同一套四层结构：
+记忆按主题域分为三个记忆集，每个集内是同一套四层结构：
 
 ```text
 assets/memory/
 ├── default/            # 创业与个人主线记忆集
-│   ├── 2026-09-26.md   # 当天日志，放集根便于手机端直接写
+│   ├── 2026-09-27.md   # 当天日志，放集根便于手机端直接写
 │   ├── journal/        # 历史日志（按日期平铺）
 │   ├── profile/        # 个人档案（从日志跨日期蒸馏）
 │   │   ├── emotions.md    # 情绪
@@ -19,13 +19,16 @@ assets/memory/
 │   │   └── expressions.md # 表达（叙事指纹）
 │   ├── insight/        # 认知洞察（机制与规律，按证据分级）
 │   ├── intention/      # 人机协作意图（对齐层：AI 提问的澄清、摩擦处的澄清）
+│   ├── report/        # 报告（专题输出与实现状态沉淀，如 vibe-coding-methods）
 │   └── roadmap/        # 主题路线图（目标含元目标 → 核心问题 → 已/待决策）
-├── write/              # 写作主线记忆集（原 assets/fiction/创作谈/）
+├── fiction/            # 写作主线记忆集（原 write/，最早为 assets/fiction/创作谈/）
 │   ├── journal/        # 创作日志
 │   ├── profile/        # 创作档案（创作动机 / 创作方法 / 创作困境）
 │   ├── insight/        # 创作认知洞察
 │   ├── roadmap/        # 作品路线图（三部曲世界观 / 职场言情 / 重生言情）
 │   └── README.md
+├── game/              # 游戏主线记忆集（journal 起步）
+│   └── journal/        # 游戏日志
 ├── .agents/skills/     # Agent Skill
 ├── AGENTS.md           # Agent 工作指南
 └── CHANGELOG.md        # 变更日志

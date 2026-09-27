@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.0] - 2026-09-27
+
+`write/` 记忆集整体更名为 `fiction/`（内容逐字节不变的纯路径迁移，git rename），并新增 `game/` 记忆集与 `default/report/` 报告层；全部已知读者已在本次发布内同步改完。
+
+### 路径映射
+
+| 旧路径 | 新路径 |
+|--------|--------|
+| `write/README.md` | `fiction/README.md` |
+| `write/journal/*.md` | `fiction/journal/*.md` |
+| `write/profile/*.md` | `fiction/profile/*.md` |
+| `write/insight/*.md` | `fiction/insight/*.md` |
+| `write/roadmap/*.md` | `fiction/roadmap/*.md` |
+
+归档站存量分类目录 `assets/archive/journal/write/` 为 `fiction/` 前身，目录更名另行处理。
+
+### Added
+
+- `game/`：游戏主线记忆集，journal 层起步
+- `default/report/`：报告层（专题输出与实现状态沉淀），首个文件 `vibe-coding-methods.md`
+- `default/`：2026-09-27 当天日志；2026-09-26 归档入 `default/journal/`
+
+### Changed
+
+- AGENTS.md、README.md：记忆集表与目录树改为 `fiction/`，补 `game/` 与 `report/`
+- `journal-to-{profile,roadmap,insight,intention}` skill：移除集名、主题文件名、集根日期等易变的硬编码示例，改为「与同集其他层对齐」「集根 `YYYY-MM-DD.md`」等结构化表述；档案轴以各集 AGENTS.md 定义为准
+- 主仓库 `journal-to-archive` skill：记忆集名同步（`default`、`fiction`、`game`，`write/` 标注为前身）
+
 ## [1.2.2] - 2026-09-26
 
 ### Added
