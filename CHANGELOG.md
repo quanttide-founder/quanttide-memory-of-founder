@@ -1,18 +1,16 @@
 # Changelog
 
-## [1.4.0] - 2026-09-27
+## [1.3.1] - 2026-09-27
 
-`game/` 记忆集整体迁出本仓库，移交 quanttide-work 领域知识上下文；内容逐字节不变。
+### Added
 
-### 路径映射
-
-| 旧路径 | 新路径 |
-|--------|--------|
-| `game/**` | `quanttide-work` 仓库 `data/context/quanttide-founder/game/**` |
+- `default/README.md`：日志迁出规则（判定表 + 迁移方式）：滁州公司相关迁 `roadriver-tech` 仓库 `data/journal/`，工作想法与洞察迁 `quanttide-work` 仓库 `data/context/quanttide-founder/default/journal/`
 
 ### Changed
 
-- AGENTS.md、README.md：记忆集表与目录树移除 `game/`，回到两个记忆集
+- `default/2026-09-27.md`：按迁出规则拆分，滁州段与工作段分别迁出，日志提纯为个人感受、收束语与日志管理元规则
+- `game/` 记忆集整体迁出至 `quanttide-work` 仓库 `data/context/quanttide-founder/game/`（含 2026-09-26 日志与蒸馏后的设计观 / 制作方法档案）；路径映射：`game/**` → `quanttide-work` 仓库 `data/context/quanttide-founder/game/**`
+- AGENTS.md、README.md：记忆集表与目录树回到 `default`、`fiction` 两集
 - 全部已知读者（本仓库文档、`journal-to-*` skill 通用表述）已同步
 
 ## [1.3.0] - 2026-09-27
