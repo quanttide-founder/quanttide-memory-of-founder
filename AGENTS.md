@@ -10,7 +10,6 @@
 |--------|--------|------|
 | `default/` | 创业与个人主线 | 业务、平台、认知与日常日志；档案为五轴（emotions / values / triggers / methods / expressions） |
 | `fiction/` | 写作主线 | 创作日志、创作档案（创作动机 / 创作方法 / 创作困境）、作品路线图；原 `write/`，最早为 `assets/fiction/创作谈/` |
-| `game/` | 游戏主线 | 游戏日志与档案（档案为设计观 / 制作方法两轴：design / method） |
 
 **分集规则**：
 

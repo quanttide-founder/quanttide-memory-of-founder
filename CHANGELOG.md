@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0] - 2026-09-27
+
+`game/` 记忆集整体迁出本仓库，移交 quanttide-work 领域知识上下文；内容逐字节不变。
+
+### 路径映射
+
+| 旧路径 | 新路径 |
+|--------|--------|
+| `game/**` | `quanttide-work` 仓库 `data/context/quanttide-founder/game/**` |
+
+### Changed
+
+- AGENTS.md、README.md：记忆集表与目录树移除 `game/`，回到两个记忆集
+- 全部已知读者（本仓库文档、`journal-to-*` skill 通用表述）已同步
+
 ## [1.3.0] - 2026-09-27
 
 `write/` 记忆集整体更名为 `fiction/`（内容逐字节不变的纯路径迁移，git rename），并新增 `game/` 记忆集与 `default/report/` 报告层；全部已知读者已在本次发布内同步改完。

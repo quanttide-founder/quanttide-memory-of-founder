@@ -4,7 +4,7 @@
 
 ## 目录
 
-记忆按主题域分为三个记忆集，每个集内是同一套四层结构：
+记忆按主题域分为两个记忆集，每个集内是同一套四层结构：
 
 ```text
 assets/memory/
@@ -27,8 +27,6 @@ assets/memory/
 │   ├── insight/        # 创作认知洞察
 │   ├── roadmap/        # 作品路线图（三部曲世界观 / 职场言情 / 重生言情）
 │   └── README.md
-├── game/              # 游戏主线记忆集（journal 起步）
-│   └── journal/        # 游戏日志
 ├── .agents/skills/     # Agent Skill
 ├── AGENTS.md           # Agent 工作指南
 └── CHANGELOG.md        # 变更日志
