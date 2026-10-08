@@ -7,6 +7,9 @@
 #   responds_to  Dilemma → Method
 #   serves       Method  → Motivation
 # 与 default/index.ttl 同一套「情境 → 方法 → 动机」链，类名随本集三轴改变。
+#
+# 节点名一律用档案原文的 `## ` 标题；档案里只有句子、没有独立条目标题的，
+# 保留短名并加一行 pf:quote 记出处句。
 
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -55,12 +58,18 @@ pf:file a rdf:Property ;
     rdfs:domain pf:Object ;
     rdfs:range  xsd:string .
 
+pf:quote a rdf:Property ;
+    rdfs:label "出处句" ;
+    rdfs:comment "档案原文里的逐字片段，用于档案没有独立条目标题、只有描述的对象" ;
+    rdfs:domain pf:Object ;
+    rdfs:range  xsd:string .
+
 ########################################
 # 创作困境
 ########################################
 
-pf:写不出来 a pf:Dilemma ;
-    rdfs:label "写不出来" ;
+pf:写不出来的时候 a pf:Dilemma ;
+    rdfs:label "写不出来的时候" ;
     pf:file "1_创作动机.md" ;
     pf:responds_to pf:以情绪为单位的素材 ;
     pf:responds_to pf:墙与瓶颈 .
@@ -82,8 +91,8 @@ pf:不敢写回忆 a pf:Dilemma ;
     rdfs:label "不敢写回忆" ;
     pf:file "3_创作困境.md" .
 
-pf:重生设定没用好 a pf:Dilemma ;
-    rdfs:label "重生设定没用好" ;
+pf:重生这个设定没用好 a pf:Dilemma ;
+    rdfs:label "重生这个设定没用好" ;
     pf:file "3_创作困境.md" .
 
 pf:团队与信任 a pf:Dilemma ;
@@ -102,14 +111,15 @@ pf:越读越觉得自己写得一般 a pf:Dilemma ;
     rdfs:label "越读越觉得自己写得一般" ;
     pf:file "3_创作困境.md" .
 
-pf:情节不够强 a pf:Dilemma ;
-    rdfs:label "情节不够强" ;
-    pf:file "2_创作方法.md" ;
-    pf:responds_to pf:涌现而非设计 .
-
 pf:还没写出来的那一层 a pf:Dilemma ;
     rdfs:label "还没写出来的那一层" ;
     pf:file "1_创作动机.md" .
+
+pf:情节不够强 a pf:Dilemma ;
+    rdfs:label "情节不够强" ;
+    pf:file "2_创作方法.md" ;
+    pf:quote "确实是情节不强" ;
+    pf:responds_to pf:涌现而非设计 .
 
 ########################################
 # 创作方法
@@ -122,7 +132,7 @@ pf:平台与情感浓度 a pf:Method ;
 pf:以情绪为单位的素材 a pf:Method ;
     rdfs:label "以情绪为单位的素材" ;
     pf:file "2_创作方法.md" ;
-    pf:serves pf:在故事里完成重构 .
+    pf:serves pf:故事里的重构 .
 
 pf:结构与风格 a pf:Method ;
     rdfs:label "结构与风格" ;
@@ -131,7 +141,7 @@ pf:结构与风格 a pf:Method ;
 pf:散文的手感 a pf:Method ;
     rdfs:label "散文的手感" ;
     pf:file "2_创作方法.md" ;
-    pf:serves pf:叙事地看世界 .
+    pf:serves pf:我本来就是叙事地看世界的 .
 
 pf:打磨的节奏 a pf:Method ;
     rdfs:label "打磨的节奏" ;
@@ -144,7 +154,7 @@ pf:发现故事 a pf:Method ;
 pf:涌现而非设计 a pf:Method ;
     rdfs:label "涌现而非设计" ;
     pf:file "2_创作方法.md" ;
-    pf:serves pf:把故事讲干净 .
+    pf:serves pf:从避风港到讲干净 .
 
 pf:自然地让人物出现 a pf:Method ;
     rdfs:label "自然地让人物出现" ;
@@ -181,7 +191,7 @@ pf:风格参照 a pf:Method ;
 pf:不设写作计划 a pf:Method ;
     rdfs:label "不设写作计划" ;
     pf:file "2_创作方法.md" ;
-    pf:serves pf:写作不必有目的 .
+    pf:serves pf:写作不需要目的 .
 
 ########################################
 # 创作动机
@@ -189,36 +199,39 @@ pf:不设写作计划 a pf:Method ;
 
 pf:消化暗恋与执念 a pf:Motivation ;
     rdfs:label "消化暗恋与执念" ;
-    pf:file "1_创作动机.md" .
+    pf:file "1_创作动机.md" ;
+    pf:quote "消化暗恋和执念" .
 
 pf:回到二十岁重新选择 a pf:Motivation ;
     rdfs:label "回到二十岁重新选择" ;
-    pf:file "1_创作动机.md" .
+    pf:file "1_创作动机.md" ;
+    pf:quote "回到 20 岁去看当时的压力和选择" .
 
 pf:怀念美好青春 a pf:Motivation ;
     rdfs:label "怀念美好青春" ;
-    pf:file "1_创作动机.md" .
+    pf:file "1_创作动机.md" ;
+    pf:quote "对于美好青春逝去的怀念" .
 
 pf:避风港 a pf:Motivation ;
     rdfs:label "避风港" ;
     pf:file "1_创作动机.md" .
 
-pf:在故事里完成重构 a pf:Motivation ;
-    rdfs:label "在故事里完成重构" ;
+pf:故事里的重构 a pf:Motivation ;
+    rdfs:label "故事里的重构" ;
     pf:file "1_创作动机.md" .
 
-pf:把故事讲干净 a pf:Motivation ;
-    rdfs:label "把故事讲干净" ;
+pf:从避风港到讲干净 a pf:Motivation ;
+    rdfs:label "从避风港到讲干净" ;
     pf:file "1_创作动机.md" .
 
-pf:写作不必有目的 a pf:Motivation ;
-    rdfs:label "写作不必有目的" ;
+pf:写作不需要目的 a pf:Motivation ;
+    rdfs:label "写作不需要目的" ;
     pf:file "1_创作动机.md" .
 
-pf:为训练_AI_而写 a pf:Motivation ;
-    rdfs:label "为训练 AI 而写" ;
+pf:它为谁而写 a pf:Motivation ;
+    rdfs:label "它为谁而写" ;
     pf:file "1_创作动机.md" .
 
-pf:叙事地看世界 a pf:Motivation ;
-    rdfs:label "叙事地看世界" ;
+pf:我本来就是叙事地看世界的 a pf:Motivation ;
+    rdfs:label "我本来就是叙事地看世界的" ;
     pf:file "1_创作动机.md" .

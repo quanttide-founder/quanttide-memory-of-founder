@@ -77,6 +77,12 @@ pf:group a rdf:Property ;
     rdfs:domain pf:Method ;
     rdfs:range  xsd:string .
 
+pf:quote a rdf:Property ;
+    rdfs:label "出处句" ;
+    rdfs:comment "档案原文里的逐字片段，用于档案没有独立条目标题、只有描述的对象" ;
+    rdfs:domain pf:Object ;
+    rdfs:range  xsd:string .
+
 ########################################
 # 触发点 —— profile/triggers.md
 ########################################
@@ -233,11 +239,13 @@ pf:交给标准化 a pf:Method ;
 pf:刻意引导 a pf:Method ;
     rdfs:label "刻意引导" ;
     pf:file "triggers.md" ;
+    pf:quote "刻意用提示词引导" ;
     rdfs:comment "仅以描述出现，未独立成节" .
 
 pf:修剪上下文 a pf:Method ;
     rdfs:label "修剪上下文" ;
     pf:file "triggers.md" ;
+    pf:quote "不断修剪上下文" ;
     rdfs:comment "仅以描述出现，未独立成节" .
 
 ########################################
@@ -293,7 +301,8 @@ pf:积累感 a pf:Value ;
 
 pf:个人化表达硬塞进组织流程 a pf:Anti ;
     rdfs:label "个人化表达硬塞进组织流程" ;
-    pf:file "values.md" .
+    pf:file "values.md" ;
+    pf:quote "把个人化的表达硬塞进组织流程" .
 
 pf:无收益的一对一投入 a pf:Anti ;
     rdfs:label "无收益的一对一投入" ;
@@ -301,4 +310,5 @@ pf:无收益的一对一投入 a pf:Anti ;
 
 pf:消耗型活动 a pf:Anti ;
     rdfs:label "消耗型活动" ;
-    pf:file "values.md" .
+    pf:file "values.md" ;
+    pf:quote "消耗型、不留下资产的活动" .
