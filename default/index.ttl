@@ -1,0 +1,304 @@
+# 认知地图 · 知识图谱
+#
+# 由 default/profile/index.yaml 转换而来（原文件已删除）。
+# 对象 = 档案条目，按 kind 归入本命名空间下的类；
+# 态射 = 定向关系，用 pf:evokes / pf:responds_to / pf:serves / pf:excludes 表达。
+# 语义签名（起点类 → 终点类）：
+#   evokes       Trigger      → Emotion
+#   responds_to  Trigger/Emotion → Method
+#   serves       Method       → Value
+#   excludes     Value        → Anti
+# 数据以 default/profile/ 下各档案为准。
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix pf:   <urn:quanttide-memory:default:profile:> .
+
+########################################
+# 本体：类别
+########################################
+
+pf:CognitiveMap a rdfs:Class ;
+    rdfs:label "认知地图" ;
+    rdfs:comment "default 集 profile 的跨日期蒸馏索引：对象 + 态射。" .
+
+pf:Object a rdfs:Class ;
+    rdfs:label "对象" ;
+    rdfs:comment "认知地图上的一个节点，取自 profile 下各档案的条目。" .
+
+pf:Trigger    a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "触发点" .
+pf:Emotion    a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "情绪" .
+pf:Method     a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "方法" .
+pf:Expression a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "表达" .
+pf:Value      a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "价值" .
+pf:Anti       a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "排除的形态" .
+
+########################################
+# 本体：态射
+########################################
+
+pf:evokes a rdf:Property ;
+    rdfs:label "触发" ;
+    rdfs:comment "触发点 → 情绪" ;
+    rdfs:domain pf:Trigger ;
+    rdfs:range  pf:Emotion .
+
+pf:responds_to a rdf:Property ;
+    rdfs:label "应对" ;
+    rdfs:comment "情境（触发点或情绪）→ 方法" ;
+    rdfs:range pf:Method .
+
+pf:serves a rdf:Property ;
+    rdfs:label "服务于" ;
+    rdfs:comment "方法 → 价值" ;
+    rdfs:domain pf:Method ;
+    rdfs:range  pf:Value .
+
+pf:excludes a rdf:Property ;
+    rdfs:label "排除" ;
+    rdfs:comment "价值 → 被排除的形态" ;
+    rdfs:domain pf:Value ;
+    rdfs:range  pf:Anti .
+
+########################################
+# 本体：对象属性
+########################################
+
+pf:file a rdf:Property ;
+    rdfs:label "来源文件" ;
+    rdfs:comment "对象所在的 profile 档案" ;
+    rdfs:domain pf:Object ;
+    rdfs:range  xsd:string .
+
+pf:group a rdf:Property ;
+    rdfs:label "分组" ;
+    rdfs:comment "方法档案内的二级分组" ;
+    rdfs:domain pf:Method ;
+    rdfs:range  xsd:string .
+
+########################################
+# 触发点 —— profile/triggers.md
+########################################
+
+pf:睡醒时的千头万绪 a pf:Trigger ;
+    rdfs:label "睡醒时的千头万绪" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:高压与喘息 ;
+    pf:responds_to pf:装进框架 .
+
+pf:战略失败 a pf:Trigger ;
+    rdfs:label "战略失败" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:信心的底色 ;
+    pf:responds_to pf:回到虚构世界 .
+
+pf:进度停滞 a pf:Trigger ;
+    rdfs:label "进度停滞" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:高压与喘息 ;
+    pf:responds_to pf:回到虚构世界 .
+
+pf:AI_变成纯粹执行者 a pf:Trigger ;
+    rdfs:label "AI 变成纯粹执行者" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:失控与重新掌控 ;
+    pf:responds_to pf:刻意引导 .
+
+pf:范围失控 a pf:Trigger ;
+    rdfs:label "范围失控" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:规模焦虑 ;
+    pf:responds_to pf:缩小窗口 .
+
+pf:不确定是否合规 a pf:Trigger ;
+    rdfs:label "不确定是否合规" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:疏离 ;
+    pf:responds_to pf:找合规来套 .
+
+pf:自己不想看自己写的内容 a pf:Trigger ;
+    rdfs:label "自己不想看自己写的内容" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:疏离 ;
+    pf:responds_to pf:修剪上下文 .
+
+########################################
+# 情绪 —— profile/emotions.md
+########################################
+
+pf:高压与喘息 a pf:Emotion ;
+    rdfs:label "高压与喘息" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:补觉与放手 .
+
+pf:失控与重新掌控 a pf:Emotion ;
+    rdfs:label "失控与重新掌控" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:刻意引导 .
+
+pf:疏离 a pf:Emotion ;
+    rdfs:label "疏离" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:修剪上下文 .
+
+pf:规模焦虑 a pf:Emotion ;
+    rdfs:label "规模焦虑" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:缩小窗口 ;
+    pf:responds_to pf:去建设平台 .
+
+pf:厌倦与熟练 a pf:Emotion ;
+    rdfs:label "厌倦与熟练" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:从依赖个人到依赖规则 .
+
+pf:信心的底色 a pf:Emotion ;
+    rdfs:label "信心的底色" ;
+    pf:file "emotions.md" .
+
+########################################
+# 方法 —— profile/methods.md
+########################################
+
+pf:缩小窗口 a pf:Method ;
+    rdfs:label "缩小窗口" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" ;
+    pf:serves pf:积累感 .
+
+pf:非商业化与商业化切开 a pf:Method ;
+    rdfs:label "非商业化与商业化切开" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:从实验室到平台 a pf:Method ;
+    rdfs:label "从实验室到平台" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:量潮经济体视角 a pf:Method ;
+    rdfs:label "量潮经济体视角" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:从依赖个人到依赖规则 a pf:Method ;
+    rdfs:label "从依赖个人到依赖规则" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:客户视角重组 a pf:Method ;
+    rdfs:label "客户视角重组" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:装进框架 a pf:Method ;
+    rdfs:label "装进框架" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:回到虚构世界 a pf:Method ;
+    rdfs:label "回到虚构世界" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:找合规来套 a pf:Method ;
+    rdfs:label "找合规来套" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" ;
+    pf:serves pf:合规是刚性边界 .
+
+pf:去建设平台 a pf:Method ;
+    rdfs:label "去建设平台" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:用现有项目做阶梯 a pf:Method ;
+    rdfs:label "用现有项目做阶梯" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:补觉与放手 a pf:Method ;
+    rdfs:label "补觉与放手" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:交给标准化 a pf:Method ;
+    rdfs:label "交给标准化" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" ;
+    pf:serves pf:标准化才配走公司流程 .
+
+# 以下两条方法仅以描述出现在 triggers.md，未独立成节
+pf:刻意引导 a pf:Method ;
+    rdfs:label "刻意引导" ;
+    pf:file "triggers.md" ;
+    rdfs:comment "仅以描述出现，未独立成节" .
+
+pf:修剪上下文 a pf:Method ;
+    rdfs:label "修剪上下文" ;
+    pf:file "triggers.md" ;
+    rdfs:comment "仅以描述出现，未独立成节" .
+
+########################################
+# 表达 —— profile/expressions.md
+########################################
+
+pf:私有数据驱动的创作实验 a pf:Expression ;
+    rdfs:label "私有数据驱动的创作实验" ;
+    pf:file "expressions.md" .
+
+pf:存稿不求工程质量 a pf:Expression ;
+    rdfs:label "存稿不求工程质量" ;
+    pf:file "expressions.md" .
+
+pf:三本小说的同构倾向 a pf:Expression ;
+    rdfs:label "三本小说的同构倾向" ;
+    pf:file "expressions.md" .
+
+########################################
+# 价值 —— profile/values.md
+########################################
+
+pf:标准化才配走公司流程 a pf:Value ;
+    rdfs:label "标准化才配走公司流程" ;
+    pf:file "values.md" ;
+    pf:excludes pf:个人化表达硬塞进组织流程 .
+
+pf:带人必须有商业收益 a pf:Value ;
+    rdfs:label "带人必须有商业收益" ;
+    pf:file "values.md" ;
+    pf:excludes pf:无收益的一对一投入 .
+
+pf:解决实际问题优于精英社交 a pf:Value ;
+    rdfs:label "解决实际问题优于精英社交" ;
+    pf:file "values.md" .
+
+pf:合规是刚性边界 a pf:Value ;
+    rdfs:label "合规是刚性边界" ;
+    pf:file "values.md" .
+
+pf:利用人性恶赚钱不能长久 a pf:Value ;
+    rdfs:label "利用人性恶赚钱不能长久" ;
+    pf:file "values.md" .
+
+pf:积累感 a pf:Value ;
+    rdfs:label "积累感" ;
+    pf:file "values.md" ;
+    pf:excludes pf:消耗型活动 .
+
+########################################
+# 排除的形态 —— profile/values.md「这条线排除的是」
+########################################
+
+pf:个人化表达硬塞进组织流程 a pf:Anti ;
+    rdfs:label "个人化表达硬塞进组织流程" ;
+    pf:file "values.md" .
+
+pf:无收益的一对一投入 a pf:Anti ;
+    rdfs:label "无收益的一对一投入" ;
+    pf:file "values.md" .
+
+pf:消耗型活动 a pf:Anti ;
+    rdfs:label "消耗型活动" ;
+    pf:file "values.md" .
