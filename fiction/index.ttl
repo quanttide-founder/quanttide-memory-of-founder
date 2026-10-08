@@ -1,0 +1,224 @@
+# 创作认知地图 · 知识图谱
+#
+# 整理自 fiction/profile/ 下三轴档案（创作动机 / 创作方法 / 创作困境）。
+# 对象 = 档案条目，按 kind 归入本命名空间下的类；
+# 态射 = 定向关系，用 pf:responds_to / pf:serves 表达。
+# 语义签名（起点类 → 终点类）：
+#   responds_to  Dilemma → Method
+#   serves       Method  → Motivation
+# 与 default/index.ttl 同一套「情境 → 方法 → 动机」链，类名随本集三轴改变。
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix pf:   <urn:quanttide-memory:fiction:profile:> .
+
+########################################
+# 本体：类别
+########################################
+
+pf:CognitiveMap a rdfs:Class ;
+    rdfs:label "创作认知地图" ;
+    rdfs:comment "fiction 集 profile 的跨日期蒸馏索引：对象 + 态射。" .
+
+pf:Object a rdfs:Class ;
+    rdfs:label "对象" ;
+    rdfs:comment "创作认知地图上的一个节点，取自 profile 下各档案的条目。" .
+
+pf:Dilemma    a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "创作困境" .
+pf:Method     a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "创作方法" .
+pf:Motivation a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "创作动机" .
+
+########################################
+# 本体：态射
+########################################
+
+pf:responds_to a rdf:Property ;
+    rdfs:label "应对" ;
+    rdfs:comment "创作困境 → 创作方法" ;
+    rdfs:domain pf:Dilemma ;
+    rdfs:range  pf:Method .
+
+pf:serves a rdf:Property ;
+    rdfs:label "服务于" ;
+    rdfs:comment "创作方法 → 创作动机" ;
+    rdfs:domain pf:Method ;
+    rdfs:range  pf:Motivation .
+
+########################################
+# 本体：对象属性
+########################################
+
+pf:file a rdf:Property ;
+    rdfs:label "来源文件" ;
+    rdfs:comment "对象所在的 profile 档案" ;
+    rdfs:domain pf:Object ;
+    rdfs:range  xsd:string .
+
+########################################
+# 创作困境
+########################################
+
+pf:写不出来 a pf:Dilemma ;
+    rdfs:label "写不出来" ;
+    pf:file "1_创作动机.md" ;
+    pf:responds_to pf:以情绪为单位的素材 ;
+    pf:responds_to pf:墙与瓶颈 .
+
+pf:孤独与找不到人写 a pf:Dilemma ;
+    rdfs:label "孤独与找不到人写" ;
+    pf:file "3_创作困境.md" ;
+    pf:responds_to pf:自然地让人物出现 .
+
+pf:写不出来的题材 a pf:Dilemma ;
+    rdfs:label "写不出来的题材" ;
+    pf:file "3_创作困境.md" .
+
+pf:不敢写的骄傲 a pf:Dilemma ;
+    rdfs:label "不敢写的骄傲" ;
+    pf:file "3_创作困境.md" .
+
+pf:不敢写回忆 a pf:Dilemma ;
+    rdfs:label "不敢写回忆" ;
+    pf:file "3_创作困境.md" .
+
+pf:重生设定没用好 a pf:Dilemma ;
+    rdfs:label "重生设定没用好" ;
+    pf:file "3_创作困境.md" .
+
+pf:团队与信任 a pf:Dilemma ;
+    rdfs:label "团队与信任" ;
+    pf:file "3_创作困境.md" .
+
+pf:极限压力的重复 a pf:Dilemma ;
+    rdfs:label "极限压力的重复" ;
+    pf:file "3_创作困境.md" .
+
+pf:最怕的事 a pf:Dilemma ;
+    rdfs:label "最怕的事" ;
+    pf:file "3_创作困境.md" .
+
+pf:越读越觉得自己写得一般 a pf:Dilemma ;
+    rdfs:label "越读越觉得自己写得一般" ;
+    pf:file "3_创作困境.md" .
+
+pf:情节不够强 a pf:Dilemma ;
+    rdfs:label "情节不够强" ;
+    pf:file "2_创作方法.md" ;
+    pf:responds_to pf:涌现而非设计 .
+
+pf:还没写出来的那一层 a pf:Dilemma ;
+    rdfs:label "还没写出来的那一层" ;
+    pf:file "1_创作动机.md" .
+
+########################################
+# 创作方法
+########################################
+
+pf:平台与情感浓度 a pf:Method ;
+    rdfs:label "平台与情感浓度" ;
+    pf:file "2_创作方法.md" .
+
+pf:以情绪为单位的素材 a pf:Method ;
+    rdfs:label "以情绪为单位的素材" ;
+    pf:file "2_创作方法.md" ;
+    pf:serves pf:在故事里完成重构 .
+
+pf:结构与风格 a pf:Method ;
+    rdfs:label "结构与风格" ;
+    pf:file "2_创作方法.md" .
+
+pf:散文的手感 a pf:Method ;
+    rdfs:label "散文的手感" ;
+    pf:file "2_创作方法.md" ;
+    pf:serves pf:叙事地看世界 .
+
+pf:打磨的节奏 a pf:Method ;
+    rdfs:label "打磨的节奏" ;
+    pf:file "2_创作方法.md" .
+
+pf:发现故事 a pf:Method ;
+    rdfs:label "发现故事" ;
+    pf:file "2_创作方法.md" .
+
+pf:涌现而非设计 a pf:Method ;
+    rdfs:label "涌现而非设计" ;
+    pf:file "2_创作方法.md" ;
+    pf:serves pf:把故事讲干净 .
+
+pf:自然地让人物出现 a pf:Method ;
+    rdfs:label "自然地让人物出现" ;
+    pf:file "2_创作方法.md" .
+
+pf:我的固定模式，和它的上限 a pf:Method ;
+    rdfs:label "我的固定模式，和它的上限" ;
+    pf:file "2_创作方法.md" .
+
+pf:素材要迁到最合适的位置 a pf:Method ;
+    rdfs:label "素材要迁到最合适的位置" ;
+    pf:file "2_创作方法.md" .
+
+pf:现实的映射与代入感 a pf:Method ;
+    rdfs:label "现实的映射与代入感" ;
+    pf:file "2_创作方法.md" .
+
+pf:墙与瓶颈 a pf:Method ;
+    rdfs:label "墙与瓶颈" ;
+    pf:file "2_创作方法.md" .
+
+pf:视角 a pf:Method ;
+    rdfs:label "视角" ;
+    pf:file "2_创作方法.md" .
+
+pf:读者反馈 a pf:Method ;
+    rdfs:label "读者反馈" ;
+    pf:file "2_创作方法.md" .
+
+pf:风格参照 a pf:Method ;
+    rdfs:label "风格参照" ;
+    pf:file "2_创作方法.md" .
+
+pf:不设写作计划 a pf:Method ;
+    rdfs:label "不设写作计划" ;
+    pf:file "2_创作方法.md" ;
+    pf:serves pf:写作不必有目的 .
+
+########################################
+# 创作动机
+########################################
+
+pf:消化暗恋与执念 a pf:Motivation ;
+    rdfs:label "消化暗恋与执念" ;
+    pf:file "1_创作动机.md" .
+
+pf:回到二十岁重新选择 a pf:Motivation ;
+    rdfs:label "回到二十岁重新选择" ;
+    pf:file "1_创作动机.md" .
+
+pf:怀念美好青春 a pf:Motivation ;
+    rdfs:label "怀念美好青春" ;
+    pf:file "1_创作动机.md" .
+
+pf:避风港 a pf:Motivation ;
+    rdfs:label "避风港" ;
+    pf:file "1_创作动机.md" .
+
+pf:在故事里完成重构 a pf:Motivation ;
+    rdfs:label "在故事里完成重构" ;
+    pf:file "1_创作动机.md" .
+
+pf:把故事讲干净 a pf:Motivation ;
+    rdfs:label "把故事讲干净" ;
+    pf:file "1_创作动机.md" .
+
+pf:写作不必有目的 a pf:Motivation ;
+    rdfs:label "写作不必有目的" ;
+    pf:file "1_创作动机.md" .
+
+pf:为训练_AI_而写 a pf:Motivation ;
+    rdfs:label "为训练 AI 而写" ;
+    pf:file "1_创作动机.md" .
+
+pf:叙事地看世界 a pf:Motivation ;
+    rdfs:label "叙事地看世界" ;
+    pf:file "1_创作动机.md" .
