@@ -1,0 +1,204 @@
+# 工作认知地图 · 知识图谱
+#
+# 整理自 work/profile/ 下五轴档案（触发点 / 情绪 / 方法 / 表达 / 价值）。
+# 对象 = 档案条目，按 kind 归入本命名空间下的类；
+# 态射 = 定向关系，用 pf:evokes / pf:responds_to / pf:serves / pf:excludes 表达。
+# 语义签名（起点类 → 终点类）：
+#   evokes       Trigger      → Emotion
+#   responds_to  Trigger/Emotion → Method
+#   serves       Method       → Value
+#   excludes     Value        → Anti
+# 与 default/index.ttl 同一套结构，命名空间不同。
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix pf:   <urn:quanttide-memory:work:profile:> .
+
+########################################
+# 本体：类别
+########################################
+
+pf:CognitiveMap a rdfs:Class ;
+    rdfs:label "认知地图" ;
+    rdfs:comment "work 集 profile 的跨日期蒸馏索引：对象 + 态射。" .
+
+pf:Object a rdfs:Class ;
+    rdfs:label "对象" ;
+    rdfs:comment "认知地图上的一个节点，取自 profile 下各档案的条目。" .
+
+pf:Trigger    a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "触发点" .
+pf:Emotion    a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "情绪" .
+pf:Method     a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "方法" .
+pf:Expression a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "表达" .
+pf:Value      a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "价值" .
+pf:Anti       a rdfs:Class ; rdfs:subClassOf pf:Object ; rdfs:label "排除的形态" .
+
+########################################
+# 本体：态射
+########################################
+
+pf:evokes a rdf:Property ;
+    rdfs:label "触发" ;
+    rdfs:comment "触发点 → 情绪" ;
+    rdfs:domain pf:Trigger ;
+    rdfs:range  pf:Emotion .
+
+pf:responds_to a rdf:Property ;
+    rdfs:label "应对" ;
+    rdfs:comment "情境（触发点或情绪）→ 方法" ;
+    rdfs:range pf:Method .
+
+pf:serves a rdf:Property ;
+    rdfs:label "服务于" ;
+    rdfs:comment "方法 → 价值" ;
+    rdfs:domain pf:Method ;
+    rdfs:range  pf:Value .
+
+pf:excludes a rdf:Property ;
+    rdfs:label "排除" ;
+    rdfs:comment "价值 → 被排除的形态" ;
+    rdfs:domain pf:Value ;
+    rdfs:range  pf:Anti .
+
+########################################
+# 本体：对象属性
+########################################
+
+pf:file a rdf:Property ;
+    rdfs:label "来源文件" ;
+    rdfs:comment "对象所在的 profile 档案" ;
+    rdfs:domain pf:Object ;
+    rdfs:range  xsd:string .
+
+pf:group a rdf:Property ;
+    rdfs:label "分组" ;
+    rdfs:comment "方法档案内的二级分组" ;
+    rdfs:domain pf:Method ;
+    rdfs:range  xsd:string .
+
+########################################
+# 触发点 —— profile/triggers.md
+########################################
+
+pf:发现新需求、与承诺有差距 a pf:Trigger ;
+    rdfs:label "发现新需求、与承诺有差距" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:脱力与落差 ;
+    pf:responds_to pf:先放下 .
+
+pf:混乱 a pf:Trigger ;
+    rdfs:label "混乱" ;
+    pf:file "triggers.md" ;
+    pf:evokes pf:崩溃与重整 ;
+    pf:responds_to pf:定关键下一步 .
+
+pf:AI_用得不顺手 a pf:Trigger ;
+    rdfs:label "AI 用得不顺手" ;
+    pf:file "triggers.md" ;
+    pf:responds_to pf:找上下文差异并显性化 .
+
+########################################
+# 情绪 —— profile/emotions.md
+########################################
+
+pf:脱力与落差 a pf:Emotion ;
+    rdfs:label "脱力与落差" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:先放下 .
+
+pf:卡住 a pf:Emotion ;
+    rdfs:label "卡住" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:先放下 .
+
+pf:崩溃与重整 a pf:Emotion ;
+    rdfs:label "崩溃与重整" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:定关键下一步 .
+
+pf:转型期的消耗 a pf:Emotion ;
+    rdfs:label "转型期的消耗" ;
+    pf:file "emotions.md" ;
+    pf:responds_to pf:承认它是转型期常态 .
+
+########################################
+# 方法 —— profile/methods.md
+########################################
+
+pf:产生一个想法就分流 a pf:Method ;
+    rdfs:label "产生一个想法就分流" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:先说出_写出来 a pf:Method ;
+    rdfs:label "先说出/写出来" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" ;
+    pf:serves pf:说出来才算数 .
+
+pf:从上下文差异找规则 a pf:Method ;
+    rdfs:label "从上下文差异找规则" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:采样胜过穷尽 a pf:Method ;
+    rdfs:label "采样胜过穷尽" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" ;
+    pf:serves pf:要能积累 .
+
+pf:先备数据，再写小应用现场处理 a pf:Method ;
+    rdfs:label "先备数据，再写小应用现场处理" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:分权制衡 a pf:Method ;
+    rdfs:label "分权制衡" ;
+    pf:file "methods.md" ;
+    pf:group "思维框架" .
+
+pf:先放下 a pf:Method ;
+    rdfs:label "先放下" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:定关键下一步 a pf:Method ;
+    rdfs:label "定关键下一步" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:承认它是转型期常态 a pf:Method ;
+    rdfs:label "承认它是转型期常态" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" .
+
+pf:找上下文差异并显性化 a pf:Method ;
+    rdfs:label "找上下文差异并显性化" ;
+    pf:file "methods.md" ;
+    pf:group "应对策略" ;
+    rdfs:seeAlso pf:从上下文差异找规则 .
+
+########################################
+# 表达 —— profile/expressions.md
+########################################
+
+pf:要求产出新实习生能看懂 a pf:Expression ;
+    rdfs:label "要求产出\"新实习生能看懂\"" ;
+    pf:file "expressions.md" .
+
+########################################
+# 价值 —— profile/values.md
+########################################
+
+pf:要能积累 a pf:Value ;
+    rdfs:label "要能积累" ;
+    pf:file "values.md" .
+
+pf:愿意信任超出自己能力的系统 a pf:Value ;
+    rdfs:label "愿意信任超出自己能力的系统" ;
+    pf:file "values.md" .
+
+pf:说出来才算数 a pf:Value ;
+    rdfs:label "说出来才算数" ;
+    pf:file "values.md" .
