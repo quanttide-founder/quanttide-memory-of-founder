@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- `write/essay/`：三篇创作档案（创作动机 / 创作方法 / 创作困境）迁出至 `quanttide-handbook-of-founder` 的 `write/`
+
 ## [1.4.1] - 2026-10-13
 
 ### Changed
