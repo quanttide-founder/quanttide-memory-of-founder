@@ -6,6 +6,7 @@
 
 - `write/essay/`：三篇创作档案（创作动机 / 创作方法 / 创作困境）迁出至 `quanttide-handbook-of-founder` 的 `write/`
 - `write/history/`：三篇作品历史与设定（职场言情 / 重生言情 / 三部曲世界观）迁出至 `quanttide-history-of-founder` 的 `write/`
+- `work/laboratory/`：认知地图推理工具（cmap）迁出至 `quanttide-founder-lab` 的 `examples/cognitive-map/`
 
 ## [1.4.1] - 2026-10-13
 
