@@ -5,6 +5,7 @@
 ### Changed
 
 - 仓库更名为 `quanttide-context-of-founder`（原 `quanttide-memory-of-founder`，旧链接自动重定向）；主仓库子模块路径先后由 `assets/memory` → `assets/context` → `data/context`；README 目录树、`default/README.md` 与各集 `index.ttl` 前缀（`urn:quanttide-memory:` → `urn:quanttide-context:`）已同步
+- `default/journal/`：23 篇原始日志（2026-09-20 ~ 2026-10-12）迁出至 `quanttide-journal-of-founder` 的 `default/<YYYY-MM>/`
 
 ## [1.3.1] - 2026-09-27
 
