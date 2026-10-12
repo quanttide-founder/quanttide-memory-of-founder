@@ -21,7 +21,7 @@ data/context/
 │   ├── intention/      # 人机协作意图（对齐层：AI 提问的澄清、摩擦处的澄清）
 │   ├── report/        # 报告（专题输出与实现状态沉淀，如 vibe-coding-methods）
 │   └── roadmap/        # 主题路线图（目标含元目标 → 核心问题 → 已/待决策）
-├── fiction/            # 写作主线记忆集（原 write/，最早为 assets/fiction/创作谈/）
+├── write/              # 写作主线记忆集（最早为 assets/fiction/创作谈/）
 │   ├── journal/        # 创作日志
 │   ├── profile/        # 创作档案（创作动机 / 创作方法 / 创作困境）
 │   ├── insight/        # 创作认知洞察

@@ -1,6 +1,6 @@
 # 创作认知地图 · 知识图谱
 #
-# 整理自 fiction/profile/ 下三轴档案（创作动机 / 创作方法 / 创作困境）。
+# 整理自 write/profile/ 下三轴档案（创作动机 / 创作方法 / 创作困境）。
 # 对象 = 档案条目，按 kind 归入本命名空间下的类；
 # 态射 = 定向关系，用 pf:responds_to / pf:serves 表达。
 # 语义签名（起点类 → 终点类）：
@@ -14,7 +14,7 @@
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix pf:   <urn:quanttide-context:fiction:profile:> .
+@prefix pf:   <urn:quanttide-context:write:profile:> .
 
 ########################################
 # 本体：类别
@@ -22,7 +22,7 @@
 
 pf:CognitiveMap a rdfs:Class ;
     rdfs:label "创作认知地图" ;
-    rdfs:comment "fiction 集 profile 的跨日期蒸馏索引：对象 + 态射。" .
+    rdfs:comment "write 集 profile 的跨日期蒸馏索引：对象 + 态射。" .
 
 pf:Object a rdfs:Class ;
     rdfs:label "对象" ;

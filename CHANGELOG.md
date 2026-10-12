@@ -8,6 +8,7 @@
 - `default/journal/`：23 篇原始日志（2026-09-20 ~ 2026-10-12）迁出至 `quanttide-journal-of-founder` 的 `default/<YYYY-MM>/`
 - `fiction/journal/`：21 篇创作日志（2026-09-05 ~ 2026-10-11，含集根 `fiction/2026-10-11.md`）迁出至 `quanttide-journal-of-founder` 的 `write/<YYYY-MM>/`
 - `work/journal/`：10 篇工作日志（2026-10-03 ~ 2026-10-12）迁出至 `quanttide-journal-of-founder` 的 `work/<YYYY-MM>/`
+- **记忆集 `fiction/` 更名 `write/`**（内容逐字节不变，git rename）；AGENTS.md、README.md、`write/index.ttl` 前缀（`urn:quanttide-context:fiction:` → `urn:quanttide-context:write:`）与 `default/profile/expressions.md`、`.agents/skills/journal-to-profile` 引用同步
 
 ## [1.3.1] - 2026-09-27
 
