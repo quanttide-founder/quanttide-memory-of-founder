@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.1] - 2026-10-13
+
+### Changed
+
+- `write/` 集档案重排：三轴档案（创作动机 / 创作方法 / 创作困境）由 `profile/` 移至 `essay/`；作品设定由 `library/<作品>/plot.md` 移至 `profile/<作品>.md`，`library/职场言情/女主.md` 移除
+
 ## [1.4.0] - 2026-10-13
 
 ### Changed
