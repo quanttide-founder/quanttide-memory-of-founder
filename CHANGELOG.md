@@ -4,7 +4,7 @@
 
 ### Changed
 
-- 仓库更名为 `quanttide-context-of-founder`（原 `quanttide-memory-of-founder`，旧链接自动重定向）；子模块路径同步为 `assets/context`；README 目录树、`default/README.md` 与各集 `index.ttl` 前缀（`urn:quanttide-memory:` → `urn:quanttide-context:`）已同步
+- 仓库更名为 `quanttide-context-of-founder`（原 `quanttide-memory-of-founder`，旧链接自动重定向）；主仓库子模块路径先后由 `assets/memory` → `assets/context` → `data/context`；README 目录树、`default/README.md` 与各集 `index.ttl` 前缀（`urn:quanttide-memory:` → `urn:quanttide-context:`）已同步
 
 ## [1.3.1] - 2026-09-27
 
