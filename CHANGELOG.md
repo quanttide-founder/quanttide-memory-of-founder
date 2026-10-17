@@ -7,7 +7,8 @@
 - `write/essay/`：三篇创作档案（创作动机 / 创作方法 / 创作困境）迁出至 `quanttide-handbook-of-founder` 的 `write/`
 - `write/history/`：三篇作品历史与设定（职场言情 / 重生言情 / 三部曲世界观）迁出至 `quanttide-history-of-founder` 的 `write/`
 - `work/laboratory/`：认知地图推理工具（cmap）迁出至 `quanttide-founder-lab` 的 `examples/cognitive-map/`
-- `default/profile/`、`work/profile/`、`write/profile/`、`media/profile/`：四处档案迁出至新仓 `quanttide-profile-of-founder`，对应其 `default/`、`work/`、`write/`、`media/`；主仓挂载点为 `data/profile`（映射：`data/context/<集>/profile/` → `data/profile/<集>/`）
+- `default/profile/`、`work/profile/`、`write/profile/`：三处档案迁出至新仓 `quanttide-profile-of-founder`，对应其 `default/`、`work/`、`write/`；主仓挂载点为 `data/profile`（映射：`data/context/<集>/profile/` → `data/profile/<集>/`）
+- `media/profile/`：当日随迁后迁回本仓（`肆季味.md`，媒体素材的对象档案与素材同住）
 
 ## [1.4.1] - 2026-10-13
 
