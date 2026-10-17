@@ -1,21 +1,23 @@
 ---
 name: journal-to-profile
-description: 从 <集>/journal/ 日志按线索提炼个人档案，写入 <集>/profile/（emotions/values/triggers/methods/expressions）。日志新增或修改后、或用户要求更新档案时使用。
+description: 从 <集>/journal/ 日志按线索提炼档案。档案已迁出到 data/profile/（think / work / write，允许跨集重组）；本 Skill 的五轴流程待迁移，执行前先读 profile 仓的档案约定。
 ---
 
 # 日志到档案
 
-把 `<集>/journal/` 中的混合日志蒸馏为**同一集** `<集>/profile/` 下的个人档案。档案轴因记忆集而异，以该集 AGENTS.md 的记忆集定义为准；下表为示例轴，各轴共享同一套提炼方法。
+> 现状：档案已迁出本仓并改为按用途分区（`think/`、`work/`、`write/`），不再写 `<集>/profile/`。下面的五轴定义是迁移前的方法；执行前先读 `data/profile/` 的 README 与各分区说明，轴名与输出路径以那边为准。
+
+把 `<集>/journal/` 中的混合日志蒸馏为个人档案。迁移后写入 `data/profile/` 的对应分区（允许跨集重组）；下面的五轴与输出示例是迁移前的口径，保留作提炼方法的参考。
 
 ## 档案轴
 
 | 文件 | 轴 | 收什么 |
 |------|-----|--------|
-| `<集>/profile/emotions.md` | 情绪 | 状态与波动：恐惧、喘息、掌控、失控、厌倦、疏离、信心 |
-| `<集>/profile/values.md` | 价值观 | 不可妥协的判断线：什么值得做、什么不做、以什么为准 |
-| `<集>/profile/triggers.md` | 触发点 | 让状态掉下去的诱因及其反应模式（因），与 emotions 的结果（果）互为呼应 |
-| `<集>/profile/methods.md` | 方法论 | 反复使用的思维框架（怎么看问题）与应对策略（卡住时怎么爬出来） |
-| `<集>/profile/expressions.md` | 表达 | 叙事指纹：写作习惯、重复的结构与口吻、母题偏好 |
+| `emotions.md` | 情绪 | 状态与波动：恐惧、喘息、掌控、失控、厌倦、疏离、信心 |
+| `values.md` | 价值观 | 不可妥协的判断线：什么值得做、什么不做、以什么为准 |
+| `triggers.md` | 触发点 | 让状态掉下去的诱因及其反应模式（因），与 emotions 的结果（果）互为呼应 |
+| `methods.md` | 方法论 | 反复使用的思维框架（怎么看问题）与应对策略（卡住时怎么爬出来） |
+| `expressions.md` | 表达 | 叙事指纹：写作习惯、重复的结构与口吻、母题偏好 |
 
 ## 原则
 
