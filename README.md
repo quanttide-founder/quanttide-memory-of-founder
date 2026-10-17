@@ -11,19 +11,14 @@ data/context/
 ├── default/            # 创业与个人主线记忆集
 │   ├── 2026-09-27.md   # 当天日志，放集根便于手机端直接写
 │   ├── journal/        # 历史日志（按日期平铺）
-│   ├── profile/        # 个人档案（从日志跨日期蒸馏）
-│   │   ├── emotions.md    # 情绪
-│   │   ├── values.md      # 价值观
-│   │   ├── triggers.md    # 触发点
-│   │   ├── methods.md     # 方法论（思维框架与应对策略）
-│   │   └── expressions.md # 表达（叙事指纹）
+│   ├── profile/        # 已迁出：个人档案在 data/profile/default/（quanttide-profile-of-founder）
 │   ├── insight/        # 认知洞察（机制与规律，按证据分级）
 │   ├── intention/      # 人机协作意图（对齐层：AI 提问的澄清、摩擦处的澄清）
 │   ├── report/        # 报告（专题输出与实现状态沉淀，如 vibe-coding-methods）
 │   └── roadmap/        # 主题路线图（目标含元目标 → 核心问题 → 已/待决策）
 ├── write/              # 写作主线记忆集（最早为 assets/fiction/创作谈/）
 │   ├── journal/        # 创作日志
-│   ├── profile/        # 创作档案（创作动机 / 创作方法 / 创作困境）
+│   ├── profile/        # 已迁出：创作档案在 data/profile/write/（quanttide-profile-of-founder）
 │   ├── insight/        # 创作认知洞察
 │   ├── roadmap/        # 作品路线图（三部曲世界观 / 职场言情 / 重生言情）
 │   └── README.md
@@ -37,7 +32,7 @@ data/context/
 蒸馏在同一记忆集内闭环，不跨集搬运：
 
 ```text
-<集>/journal/（日志）→ journal-to-profile  → <集>/profile/（个人档案）
+<集>/journal/（日志）→ journal-to-profile  → data/profile/<集>/（个人档案，已迁出本仓）
                     → journal-to-roadmap   → <集>/roadmap/（主题路线图）
                     → journal-to-insight   → <集>/insight/（认知洞察）
                     → journal-to-intention → <集>/intention/（意图对齐）
@@ -55,7 +50,7 @@ data/context/
 | 层级 | 目录 | 内容 |
 |------|------|------|
 | 时间线 | `<集>/`（当天）、`<集>/journal/`（历史） | 原始日志，按日期记录 |
-| 特征 | `<集>/profile/` | 蒸馏后的个人档案，跨日期稳定 |
+| 特征 | `data/profile/<集>/`（已迁出本仓） | 蒸馏后的个人档案，跨日期稳定 |
 | 认知 | `<集>/insight/` | 想通的机制与规律命题，已确认/假说分级 |
 | 方向 | `<集>/roadmap/` | 目标（含元目标）、核心问题、已/待决策 |
 | 对齐 | `<集>/intention/` | 人机协作的意图对齐信息（目前仅 `default/`） |
